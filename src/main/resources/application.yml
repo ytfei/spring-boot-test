@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-boot-test
+
+logging:
+  level:
+    root: debug
+
+server:
+  port: 8088
+
+
