@@ -1,6 +1,30 @@
 spring:
   application:
     name: spring-boot-test
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
+  liquibase:
+    change-log: classpath*:db/changelog/db.changelog.yml
+
+mybatis:
+  check-config-location: false
+  mapper-locations[0]: classpath*:mapper/*.xml
+  configuration:
+    cache-enabled: false
+    local-cache-scope: statement
+    use-generated-keys: true
+    aggressive-lazy-loading: true
+    lazy-loading-enabled: true
+    default-executor-type: simple
+    jdbc-type-for-null: null
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: partial
+    use-column-label: true
+    multiple-result-sets-enabled: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 
 logging:
   level:
