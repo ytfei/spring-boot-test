@@ -1,2 +1,7 @@
 logging:
   level: trace
+
+spring:
+  redis:
+    host: localhost
+    port: 6370

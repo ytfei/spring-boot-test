@@ -9,6 +9,10 @@ spring:
   liquibase:
     change-log: classpath*:db/changelog/db.changelog.yml
 
+  redis:
+    host: localhost
+    port: 6379
+
 mybatis:
   check-config-location: false
   mapper-locations[0]: classpath*:mapper/*.xml
