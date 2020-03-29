@@ -2,6 +2,7 @@ package work.lemoon.demo.springboottest.mvc;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.mybatis.spring.boot.test.autoconfigure.AutoConfigureMybatis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -32,6 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @SpringBootTest(classes = SayHiControllerTest2.Conf.class)
 @AutoConfigureMockMvc
+@AutoConfigureMybatis // Specify instead of @MybatisTest 多种场景结合
 class SayHiControllerTest2 {
 
     @TestConfiguration
