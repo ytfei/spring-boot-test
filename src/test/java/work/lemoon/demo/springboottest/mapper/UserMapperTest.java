@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  **/
 @MybatisTest /* 这个注解会替换配置文件中声明的数据源，使用一个内存数据库来做测试 */
 // 该注解表示不要使用 @MyBatisTest 声明的内存数据库，而是使用系统配置的数据库
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import(UserDao.class)
 // 如果 Mapper 类上面没有加 @Mapper 注解，则需要增加 @MapperScan
 //@MapperScan("work.lemoon.demo.springboottest.mapper")
