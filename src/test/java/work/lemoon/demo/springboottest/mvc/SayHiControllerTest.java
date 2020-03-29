@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 import work.lemoon.demo.springboottest.service.CountingService;
+import work.lemoon.demo.springboottest.service.pay.PaymentService;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,6 +35,9 @@ class SayHiControllerTest {
     @MockBean
     private CountingService countingService;
 
+    @MockBean
+    private PaymentService paymentService;
+
     @Test
     void doCount() throws Exception {
         given(countingService.count(any(Collection.class))).willReturn(100);
@@ -41,6 +45,6 @@ class SayHiControllerTest {
         assertEquals(100, countingService.count(Arrays.asList(1, 2, 3)));
 
         mvc.perform(get("/say/count?data=1,2,3").accept(MediaType.TEXT_PLAIN))
-                .andExpect(status().isOk()).andExpect(content().string("100"));
+                .andExpect(status().isOk()).andExpect(content().string("[100]"));
     }
 }
