@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:testdb
     username: sa
-    password: 
+    password:
 
   liquibase:
     change-log: classpath*:db/changelog/db.changelog.yml
