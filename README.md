@@ -4,6 +4,12 @@
 
 ![测试场景](assets/arch.png)
 
+## 代码质量
+
+1. 编码规范 阿里巴巴Java开发手册 & IDEA 插件
+2. FindBugs 静态代码检查
+3. [编译时错误检查](https://errorprone.info/docs/installation)
+4. 单元测试
 
 ## 测试的内容
 
