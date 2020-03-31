@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Import(UserDao.class)
 // 如果 Mapper 类上面没有加 @Mapper 注解，则需要增加 @MapperScan
-//@MapperScan("work.lemoon.demo.springboottest.mapper")
+@MapperScan("work.lemoon.demo.springboottest.mapper")
 class UserMapperTest {
 
     @Autowired
