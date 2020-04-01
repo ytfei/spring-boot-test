@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import work.lemoon.demo.springboottest.base.WrapResult;
 import work.lemoon.demo.springboottest.service.CountingService;
 import work.lemoon.demo.springboottest.service.pay.PaymentRequest;
 import work.lemoon.demo.springboottest.service.pay.PaymentResult;
@@ -26,6 +27,7 @@ public class SayHiController {
     private PaymentService paymentService;
 
     @GetMapping("/count")
+    @WrapResult
     String doCount(@RequestParam("data") String data) {
         log.info("received: {}", data);
 
