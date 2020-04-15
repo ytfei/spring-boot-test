@@ -32,10 +32,18 @@ mybatis:
 
 logging:
   level:
-    root: debug
+    root: INFO
 
 server:
   port: 8088
 
 # 显示 AutoConfig 的日志
-debug: true
+debug: false
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
