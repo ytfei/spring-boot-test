@@ -26,3 +26,7 @@ build:
   stage: build
   script:
     - 'mvn install -s ci_settings.xml -DskipTests=true'
+
+  artifacts:
+    paths:
+      - target/*.jar
