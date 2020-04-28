@@ -1,0 +1,21 @@
+<settings>
+  <servers>
+    <server>
+        <server>
+            <id>rdc-releases</id>
+            <username>uehHWG</username>
+            <password>Jgsw6wQW6p</password>
+        </server>
+        <server>
+            <id>rdc-snapshots</id>
+            <username>uehHWG</username>
+            <password>Jgsw6wQW6p</password>
+        </server>
+        <server>
+        <id>nexus</id>
+        <username>admin</username>
+        <password>sj123.</password>
+        </server>        
+    </server>
+  </servers>
+</settings>
