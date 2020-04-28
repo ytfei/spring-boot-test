@@ -24,5 +24,5 @@ cache:
 # See https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 build:
   stage: build
-  scripts:
+  script:
     - 'mvn install -s ci_settings.xml -DskipTests=true'
