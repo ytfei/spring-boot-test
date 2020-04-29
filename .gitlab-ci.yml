@@ -42,7 +42,7 @@ build:
       - target/*.jar
 
 deploy:
-  stage: depoly
+  stage: deploy
   script:
     - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/*.jar root@172.16.16.23:/home/app/application/spring-boot-test/
     
