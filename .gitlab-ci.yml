@@ -51,6 +51,6 @@ deploy:
       pm2 stop pm2-conf.json
       pm2 start pm2-conf.json
       EOF
-  when:
-    - master
+
+  
     
