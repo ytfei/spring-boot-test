@@ -26,6 +26,8 @@ before_script:
   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
 
 # For merge requests do not `deploy` but only run `verify`.
 # See https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
@@ -37,3 +39,9 @@ build:
   artifacts:
     paths:
       - target/*.jar
+
+deploy:
+  stage: depoly
+  script:
+    - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/*.jar root@172.16.16.23:/home/app/application/spring-boot-test/
+    
