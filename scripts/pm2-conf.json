@@ -1,0 +1,35 @@
+{
+    "apps":[
+    {
+        "name":"pm2-java",
+        "cwd":".",
+        "script":"java",
+        "args":[
+            "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7301",
+            "-server",
+            "-Xmx512m",
+            "-Xms512m",
+            "-Xmn192m",
+            "-Xss256K",
+            "-XX:PermSize=128M",
+            "-XX:MaxPermSize=128M",
+            "-XX:+PrintGCTimeStamps",
+            "-XX:+PrintGCDetails",
+            "-XX:ErrorFile=java_error.log",
+            "-verbose:gc",
+            "-Xloggc:gc.log",
+            "-jar",
+            "./spring-boot-test-0.0.1-SNAPSHOT.jar"
+        ],
+        "watch":[
+            "./spring-boot-test-0.0.1-SNAPSHOT.jar"
+        ],
+        "node_args":[],
+        "log_date_format":"YYYY-MM-DD HH:mm Z",
+        "exec_interpreter":"",
+        "exec_mode":"fork"
+     }
+   ]
+}
+
+ 
