@@ -46,11 +46,10 @@ deploy:
   script:
     - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/*.jar root@172.16.16.23:/home/app/application/spring-boot-test/
     - scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null scripts/* root@172.16.16.23:/home/app/application/spring-boot-test/
-    - ssh  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@172.16.16.23 <<EOF
-      cd /home/app/application/spring-boot-test/
-      pm2 stop pm2-conf.json
-      pm2 start pm2-conf.json
-      EOF
-
-  
-    
+    - |
+        ssh  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@172.16.16.23 <<EOF
+        cd /home/app/application/spring-boot-test/
+        pm2 stop pm2-conf.json
+        pm2 start pm2-conf.json
+        EOF
+    - echo 'ih'
